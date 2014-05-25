@@ -1,0 +1,39 @@
+<%- model_class = Trainer -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
+  <dd><%= @trainer.name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:contact) %>:</strong></dt>
+  <dd><%= @trainer.contact %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:website) %>:</strong></dt>
+  <dd><%= @trainer.website %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:facebook_site) %>:</strong></dt>
+  <dd><%= @trainer.facebook_site %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:rating) %>:</strong></dt>
+  <dd><%= @trainer.rating %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:specialities) %>:</strong></dt>
+  <dd><%= @trainer.specialities %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:home_town) %>:</strong></dt>
+  <dd><%= @trainer.home_town %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:products) %>:</strong></dt>
+  <dd><%= @trainer.products %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:qualifications) %>:</strong></dt>
+  <dd><%= @trainer.qualifications %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:image) %>:</strong></dt>
+  <dd><%= @trainer.image %></dd>
+</dl>
+
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              trainers_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_trainer_path(@trainer), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              trainer_path(@trainer),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>

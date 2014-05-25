@@ -1,0 +1,60 @@
+<%- model_class = TrainingContent -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:description) %></th>
+      <th><%= model_class.human_attribute_name(:preconditions) %></th>
+      <th><%= model_class.human_attribute_name(:included_material) %></th>
+      <th><%= model_class.human_attribute_name(:necessary_material) %></th>
+      <th><%= model_class.human_attribute_name(:cost) %></th>
+      <th><%= model_class.human_attribute_name(:model_needed) %></th>
+      <th><%= model_class.human_attribute_name(:max_participants) %></th>
+      <th><%= model_class.human_attribute_name(:included_services) %></th>
+      <th><%= model_class.human_attribute_name(:comments) %></th>
+      <th><%= model_class.human_attribute_name(:level) %></th>
+      <th><%= model_class.human_attribute_name(:name) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% if @training_contents.count > 0 %>
+    <% @training_contents.each do |training_content| %>
+      <tr>
+        <td><%= link_to training_content.id, training_content_path(training_content) %></td>
+        <td><%= training_content.description %></td>
+        <td><%= training_content.preconditions %></td>
+        <td><%= training_content.included_material %></td>
+        <td><%= training_content.necessary_material %></td>
+        <td><%= training_content.cost %></td>
+        <td><%= training_content.model_needed %></td>
+        <td><%= training_content.max_participants %></td>
+        <td><%= training_content.included_services %></td>
+        <td><%= training_content.comments %></td>
+        <td><%= training_content.level %></td>
+        <td><%= training_content.name %></td>
+        <td><%=l training_content.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_training_content_path(training_content), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      training_content_path(training_content),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+    <%else%>
+    <tr><td colspan="14" style="color:red;text-align:center;">No information found.</td></tr>
+    <%end%>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_training_content_path,
+            :class => 'btn btn-primary' %>

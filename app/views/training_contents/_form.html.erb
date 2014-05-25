@@ -1,0 +1,74 @@
+<%= form_for @training_content, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :description, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_area :description, :class => 'text_area', :rows => 3 %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :preconditions, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_area :preconditions, :class => 'text_area', :rows => 3 %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :included_material, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_area :included_material, :class => 'text_area', :rows => 3 %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :necessary_material, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_area :necessary_material, :class => 'text_area', :rows => 3 %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :cost, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :cost, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :model_needed, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.check_box :model_needed, :class => 'check_box' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :max_participants, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :max_participants, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :included_services, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_area :included_services, :class => 'text_area', :rows => 3 %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :comments, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_area :comments, :class => 'text_area', :rows => 3 %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :level, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :level, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :name, :class => 'text_field' %>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                training_contents_path, :class => 'btn' %>
+  </div>
+<% end %>

@@ -1,0 +1,68 @@
+<%= form_for @trainer, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :name, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :contact, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :contact, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :website, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :website, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :facebook_site, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :facebook_site, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :rating, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :rating, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :specialities, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_area :specialities, :class => 'text_area', :rows => 3  %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :home_town, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :home_town, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :products, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_area :products, :class => 'text_area', :rows => 3  %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :qualifications, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_area :qualifications, :class => 'text_area', :rows => 3 %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :image, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :image, :class => 'text_field' %>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                trainers_path, :class => 'btn' %>
+  </div>
+<% end %>
